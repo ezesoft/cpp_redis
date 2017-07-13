@@ -31,11 +31,8 @@ lib
 *.exe
 *.out
 *.app
-*.sln
-*.vcxproj
 *.suo
 *.user
-*.filters
 *.VC.db
 *.opendb
 .gitignore
