@@ -6,8 +6,8 @@
     <title>Eze cpp_redis development</title>
     <authors>Simon Ninon</authors>
     <owners>Simon Ninon</owners>
-    <licenseUrl>https://github.com/rbaxter1/cpp_redis/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/rbaxter1/cpp_redis</projectUrl>
+    <licenseUrl>https://github.com/ezesoft/cpp_redis/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ezesoft/cpp_redis</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Develop branch of cpp_redis libraries</description>
     <summary>Prebuilt cpp_redis library (develoment branch)</summary>
