@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ezesoft.cpp_redis.dev</id>
+    <version>$version$</version>
+    <title>Eze cpp_redis development</title>
+    <authors>Simon Ninon</authors>
+    <owners>Simon Ninon</owners>
+    <licenseUrl>https://github.com/rbaxter1/cpp_redis/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/rbaxter1/cpp_redis</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Develop branch of cpp_redis libraries</description>
+    <summary>Prebuilt cpp_redis library (develoment branch)</summary>
+    <releaseNotes />
+    <copyright>Copyright 2015-2017</copyright>
+    <tags>cpp_redis redis</tags>
+  </metadata>
+  <files>
+    <file src="includes\**" target="build\native\include\" />
+    <file src="tacopie\includes\**" target="build\native\include\" />
+    <file src="Build_Win64\lib\Release\*.lib" target="build\native\lib\x64\v120\Release\Desktop\" />
+    <file src="Build_Win64\lib\Debug\*.lib" target="build\native\lib\x64\v120\Debug\Desktop\" />
+    <file src="Build_Win64\lib\Debug\*.pdb" target="build\native\lib\x64\v120\Debug\Desktop\" />
+    <file src="Build_Win32\lib\Release\*.lib" target="build\native\lib\Win32\v120\Release\Desktop\" />
+    <file src="Build_Win32\lib\Debug\*.lib" target="build\native\lib\Win32\v120\Debug\Desktop\" />
+    <file src="Build_Win32\lib\Debug\*.pdb" target="build\native\lib\Win32\v120\Debug\Desktop\" />
+    <file src="NugetPackage\configurations.autopkg" target="build\" />
+    <file src="NugetPackage\publisher-info.txt" target="build\" />
+    <file src="NugetPackage\default-propertiesui.xml" target="build\native\" />
+    <file src="NugetPackage\ezesoft.cpp_redis.dev.props" target="build\native\" />
+    <file src="NugetPackage\ezesoft.cpp_redis.dev.targets" target="build\native\" />
+    <file src="NugetPackage\CoApp.NuGetNativeMSBuildTasks.dll.orig" target="build\native\private\" />
+  </files>
+</package>

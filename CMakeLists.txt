@@ -26,7 +26,7 @@
 cmake_minimum_required(VERSION 2.8.7)
 set(CMAKE_MACOSX_RPATH 1)
 include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
-
+#set(MSVC_RUNTIME_LIBRARY_CONFIG "MD")
 
 ###
 # verbose make
@@ -51,7 +51,7 @@ IF (WIN32)
   string(REPLACE "/RTC1" "" CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG})
 
   IF ("${MSVC_RUNTIME_LIBRARY_CONFIG}" STREQUAL "")
-    set(MSVC_RUNTIME_LIBRARY_CONFIG "/MT")
+    set(MSVC_RUNTIME_LIBRARY_CONFIG "/MD")
   ENDIF()
 
   foreach (flag_var CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE)

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="cpp_redis_init_targets_0;cpp_redis_dev_init_targets_1">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkages-fix8_dev Condition="'$(Linkages-fix8_dev)' == ''">dynamic</Linkages-fix8_dev>
+    <CallingConventions-fix8_dev Condition="'$(CallingConventions-fix8_dev)' == ''">cdecl</CallingConventions-fix8_dev>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>HAS_FIX8;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../../build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../../build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v120 and Release and Desktop" Condition="'$(Platform.ToLower())' == 'win32' And ( '$(PlatformToolset.ToLower())' == 'v120' Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8' ) And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And ( !('$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0') And !('$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0') And !('$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0') And !('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' &gt;= '8.0') And !('$(AppContainerApplication.ToLower())' == 'true') )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../../build/native/lib/Win32/v120/Release/Desktop/cpp_redis.lib;$(MSBuildThisFileDirectory)../../build/native/lib/Win32/v120/Release/Desktop/tacopie.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v120 and Release and Desktop" Condition="'$(Platform.ToLower())' == 'x64' And ( '$(PlatformToolset.ToLower())' == 'v120' Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8' ) And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And ( !('$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0') And !('$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0') And !('$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0') And !('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' &gt;= '8.0') And !('$(AppContainerApplication.ToLower())' == 'true') )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../../build/native/lib/x64/v120/Release/Desktop/cpp_redis.lib;$(MSBuildThisFileDirectory)../../build/native/lib/x64/v120/Release/Desktop/tacopie.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and v120 and Debug and Desktop" Condition="'$(Platform.ToLower())' == 'x64' And ( '$(PlatformToolset.ToLower())' == 'v120' Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8' ) And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And ( !('$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0') And !('$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0') And !('$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0') And !('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' &gt;= '8.0') And !('$(AppContainerApplication.ToLower())' == 'true') )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../../build/native/lib/x64/v120/Debug/Desktop/cpp_redis.lib;$(MSBuildThisFileDirectory)../../build/native/lib/x64/v120/Debug/Desktop/tacopie.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and v120 and Debug and Desktop" Condition="'$(Platform.ToLower())' == 'win32' And ( '$(PlatformToolset.ToLower())' == 'v120' Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8' ) And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And ( !('$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0') And !('$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0') And !('$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0') And !('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' &gt;= '8.0') And !('$(AppContainerApplication.ToLower())' == 'true') )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../../build/native/lib/Win32/v120/Debug/Desktop/cpp_redis.lib;$(MSBuildThisFileDirectory)../../build/native/lib/Win32/v120/Debug/Desktop/tacopie.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Target Name="cpp_redis_AfterBuild" AfterTargets="AfterBuild">
+    <Copy SkipUnchangedFiles="true" SourceFiles="@(CopyToOutput)" UseHardlinksIfPossible="true" DestinationFolder="$(TargetDir)">
+      <Output TaskParameter="DestinationFiles" PropertyName="DestinationFiles" />
+      <Output TaskParameter="DestinationFiles" ItemName="DestinationFiles" />
+      <Output TaskParameter="CopiedFiles" PropertyName="CopiedFiles" />
+      <Output TaskParameter="CopiedFiles" ItemName="CopiedFiles" />
+    </Copy>
+  </Target>
+  <Target Name="cpp_redis_dev_BeforeLink" AfterTargets="BeforeLink">
+    <CheckRuntimeLibrary RuntimeLibrary="%(ClCompile.RuntimeLibrary)" ExpectedRuntimeLibrary="none" LibraryName="fix8_dev" />
+  </Target>
+  <Target Name="cpp_redis_dev_init_targets_1">
+    <StringContains Text="Linkages-dynamic" Library="fix8_dev" Value="dynamic" Condition="'$(Linkages-fix8_dev)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkages-fix8_dev" />
+    </StringContains>
+    <StringContains Text="Linkages-static" Library="fix8_dev" Value="static" Condition="'$(Linkages-fix8_dev)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkages-fix8_dev" />
+    </StringContains>
+    <StringContains Text="Linkages-ltcg" Library="fix8_dev" Value="ltcg" Condition="'$(Linkages-fix8_dev)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkages-fix8_dev" />
+    </StringContains>
+    <StringContains Text="Linkages-sxs" Library="fix8_dev" Value="sxs" Condition="'$(Linkages-fix8_dev)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkages-fix8_dev" />
+    </StringContains>
+    <StringContains Text="CallingConventions-cdecl" Library="fix8_dev" Value="cdecl" Condition="'$(CallingConventions-fix8_dev)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConventions-fix8_dev" />
+    </StringContains>
+    <StringContains Text="CallingConventions-stdcall" Library="fix8_dev" Value="stdcall" Condition="'$(CallingConventions-fix8_dev)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConventions-fix8_dev" />
+    </StringContains>
+    <StringContains Text="CallingConventions-fastcall" Library="fix8_dev" Value="fastcall" Condition="'$(CallingConventions-fix8_dev)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConventions-fix8_dev" />
+    </StringContains>
+    <StringContains Text="CallingConventions-thiscall" Library="fix8_dev" Value="thiscall" Condition="'$(CallingConventions-fix8_dev)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConventions-fix8_dev" />
+    </StringContains>
+    <StringContains Text="CallingConventions-clrcall" Library="fix8_dev" Value="clrcall" Condition="'$(CallingConventions-fix8_dev)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConventions-fix8_dev" />
+    </StringContains>
+    <StringContains Text="CallingConventions-vectorcall" Library="fix8_dev" Value="vectorcall" Condition="'$(CallingConventions-fix8_dev)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConventions-fix8_dev" />
+    </StringContains>
+  </Target>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <UsingTask TaskName="NuGetPackageOverlay" AssemblyFile="$(NuGet-NativeExtensionPath)\coapp.NuGetNativeMSBuildTasks.dll" Condition="'$(DesignTimeBuild)' != 'true' AND ('$(NugetMsBuildExtensionLoaded)' == '' OR '$(NugetMsBuildExtensionLoaded)' == 'false')" />
+  <UsingTask TaskName="CheckRuntimeLibrary" AssemblyFile="$(NuGet-NativeExtensionPath)\coapp.NuGetNativeMSBuildTasks.dll" Condition="'$(DesignTimeBuild)' != 'true' AND ('$(NugetMsBuildExtensionLoaded)' == '' OR '$(NugetMsBuildExtensionLoaded)' == 'false')" />
+  <UsingTask TaskName="StringContains" AssemblyFile="$(NuGet-NativeExtensionPath)\coapp.NuGetNativeMSBuildTasks.dll" Condition="'$(DesignTimeBuild)' != 'true' AND ('$(NugetMsBuildExtensionLoaded)' == '' OR '$(NugetMsBuildExtensionLoaded)' == 'false')" />
+  <Target Name="cpp_redis_init_targets_0">
+    <Copy SkipUnchangedFiles="true" SourceFiles="$(NuGet-NativeExtensionPath)\coapp.NuGetNativeMSBuildTasks.dll.orig" DestinationFiles="$(NuGet-NativeExtensionPath)\coapp.NuGetNativeMSBuildTasks.dll" />
+    <PropertyGroup>
+      <NugetMsBuildExtensionLoaded Condition="'$(NugetMsBuildExtensionLoaded)' == '' OR '$(NuGet-OverlayLoaded)' == 'false'">true</NugetMsBuildExtensionLoaded>
+    </PropertyGroup>
+  </Target>
+</Project>
