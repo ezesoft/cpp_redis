@@ -30,9 +30,9 @@ project(${PROJECT} CXX)
 ###
 # compilation options
 ###
-IF (NOT WIN32)
+if(NOT WIN32)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-ENDIF (NOT WIN32)
+endif(NOT WIN32)
 
 
 ###
@@ -48,27 +48,21 @@ link_directories(${DEPS_LIBRARIES})
 
 
 ###
-# sources
+# executables
 ###
-set(SOURCES "")
-set(DIRS "sources" "sources/spec" "sources/spec/**")
-foreach(dir ${DIRS})
-  # get directory sources
-  file(GLOB s_${dir} "${dir}/*.cpp")
-  # set sources
-  set(SOURCES ${SOURCES} ${s_${dir}})
+set(MAIN "sources/main.cpp")
+set(DIRS "sources/spec" "sources/spec/**")
+foreach(DIR ${DIRS})
+  file(GLOB s_${DIR} "${DIR}/*.cpp")
+  foreach(SOURCE ${s_${DIR}})
+    get_filename_component(TEST_NAME ${SOURCE} NAME_WE)
+    add_executable(${TEST_NAME} ${MAIN} ${SOURCE})
+    target_link_libraries(${TEST_NAME} cpp_redis gtest)
+    if(WIN32)
+      target_link_libraries(${TEST_NAME} ws2_32)
+    else()
+      target_link_libraries(${TEST_NAME} pthread)
+    endif(WIN32)
+    add_test(NAME ${TEST_NAME}_tests COMMAND ${TEST_NAME})
+  endforeach()
 endforeach()
-
-
-###
-# executable
-###
-add_executable(${PROJECT} ${SOURCES})
-
-target_link_libraries(${PROJECT} cpp_redis gtest)
-
-IF (WIN32)
-  target_link_libraries(${PROJECT} ws2_32)
-ELSE ()
-  target_link_libraries(${PROJECT} pthread)
-ENDIF (WIN32)
